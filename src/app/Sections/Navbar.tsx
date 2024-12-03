@@ -64,7 +64,7 @@ import React from 'react';
 import Hamburger from './Hamburger';
 import Image from 'next/image';
 import syslabLogo from '../../../public/logosyslab.svg';
-import styles from '../styles/Navbar.module.css';
+import styles from '../styles/navbar.module.css';
 
 const navLinks = [
     { href: "#", label: "Home" },
