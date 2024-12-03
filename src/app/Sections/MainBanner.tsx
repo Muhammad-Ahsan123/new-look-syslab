@@ -116,9 +116,9 @@ export function MainBanner() {
                 playsInline
                 preload="auto"
                 className="absolute w-full h-screen md:h-[100vh] bg-no-repeat opacity-[0.88] object-cover"
-                poster="/video-placeholder.jpg"
+                // poster="/video-placeholder.jpg"
             >
-                <source src="/mainbannervideo-low.mp4" media="(max-width: 768px)" type="video/mp4" />
+                {/* <source src="/mainbannervideo-low.mp4" media="(max-width: 768px)" type="video/mp4" /> */}
                 <source src="/compressbannervideo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
