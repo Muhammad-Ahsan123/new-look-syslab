@@ -9,8 +9,7 @@ import Services from "./Sections/Service";
 import MarqueTab from "./Sections/MarqueTab";
 import ContactUs from "./Sections/ContactUs";
 import Footer from "./Sections/Footer";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Toaster from "./Sections/Toaster";
 
 
 export default function Home() {
@@ -28,27 +27,15 @@ export default function Home() {
           property="og:description"
           content="Explore the future with Syslab.ai's AI-driven solutions for businesses."
         />
+        <meta property="og:type" content="website" />
         <meta property="og:image" content="/assets/syslab-banner.jpg" />
-        <meta property="og:url" content="https://syslab.ai" />
+        <meta property="og:url" content="https://new-look-syslab-syslab.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@your_twitter_handle" />
       </Head>
       <Navbar />
+      <Toaster />
 
-      <div className="w-full overflow-hidden rounded-md">
-        <ToastContainer
-          position="top-center"
-          style={{
-            top: '85px',
-            left: '50%', // Center horizontally
-            transform: 'translateX(-50%)', // Adjust to precisely center it
-            width: '100%', // For mobile view, take full width
-            maxWidth: '300px', // Prevents the toast from growing too wide on larger screens
-            // backgroundColor: 'red',
-            borderRadius : '6px'
-          }}
-          className="absolute z-[300000]"
-        />
-      </div>
 
       <MainBanner />
       <MarqueTab />

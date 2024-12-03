@@ -1,4 +1,4 @@
-import type { Config ,  } from "tailwindcss";
+import type { Config, } from "tailwindcss";
 
 export default {
   content: [
@@ -10,7 +10,7 @@ export default {
     extend: {
 
       animation: {
-        slideInLeft: "slideInLeft 0.5s ease-out forwards", 
+        slideInLeft: "slideInLeft 0.5s ease-out forwards",
         slideInRight: "slideInRight 0.5s ease-out forwards",
         innovativeSlideInLeft: "innovativeSlideInLeft 0.5s ease-out forwards",
         innovativeSlideInBottom: "innovativeSlideInBottom 0.7s ease-out forwards",
@@ -41,24 +41,12 @@ export default {
           },
         },
         innovativeSlideInLeft: {
-          "0%": {
-            transform: "translateX(-70vw)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateX(0)",
-            opacity: "1",
-          },
+          "0%": { transform: "translateX(-70vw)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
         },
         innovativeSlideInBottom: {
-          "0%": {
-            transform: "translateY(13vh)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateY(0)",
-            opacity: "1",
-          },
+          "0%": { transform: "translateY(20vh)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
         },
         serviceSlideFromTop: {
           '0%': { transform: 'translateY(-100%)', opacity: "0" },

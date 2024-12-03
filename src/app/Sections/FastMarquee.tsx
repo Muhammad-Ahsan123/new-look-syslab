@@ -16,8 +16,15 @@ const FastMarquee = () => {
     ];
 
     return (
-        // <Marquee className="py-10 bg-gray-200 mb-24">
-        <Marquee className="py-10 bg-gray-200 xl:mb-0 mb-12">
+        // <Marquee className="py-6 sm:py-10 bg-gray-200 mb-12 xl:mb-16">
+        //     {images.map((src, index) => (
+        //         <MarqueeImage key={index} imageSrc={src} />
+        //     ))}
+        // </Marquee>
+        <Marquee
+            gradient={true}
+            gradientWidth={85}
+            className="bg-gray-200 mb-12 xl:mb-16 h-[150px]">
             {images.map((src, index) => (
                 <MarqueeImage key={index} imageSrc={src} />
             ))}

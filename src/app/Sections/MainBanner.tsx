@@ -116,16 +116,18 @@ export function MainBanner() {
                 playsInline
                 preload="auto"
                 className="absolute w-full h-screen md:h-[100vh] bg-no-repeat opacity-[0.88] object-cover"
-                // poster="/video-placeholder.jpg"
+                src="/compressbannervideo.mp4"
+            // poster="/video-placeholder.jpg"
             >
                 {/* <source src="/mainbannervideo-low.mp4" media="(max-width: 768px)" type="video/mp4" /> */}
-                <source src="/compressbannervideo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+                {/* <source src="/compressbannervideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag. */}
             </video>
 
             <div className="w-full rounded-md relative flex flex-col items-start sm:items-center justify-center antialiased overflow-hidden">
                 <div className="flex flex-col gap-4 lg:flex-row items-center justify-between px-4 md:px-16 lg:px-20 xl:px-40 lg:h-screen z-10">
-                    <div className="w-full lg:w-[55%] gap-6 text-center lg:text-left sm:mt-0 mt-4 font-sans">
+                    {/* Left Side Div (Text) */}
+                    <div className="w-full lg:w-[55%] gap-6 text-center lg:text-left sm:mt-0 mt-4 font-sans animate-slideInLeft">
                         <h2 className="text-5xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-t from-gray-400 to-neutral-100 font-bold h-[55px] md:h-[84px]">
                             Syslab.ai
                         </h2>
@@ -143,7 +145,9 @@ export function MainBanner() {
                             please feel free to send us a query at info at syslab.com
                         </p>
                     </div>
-                    <div className="mt-8 lg:mt-0 justify-center lg:justify-end lg:block hidden">
+
+                    {/* Right Side Div (Image) */}
+                    <div className="mt-8 lg:mt-0 justify-center lg:justify-end lg:block hidden animate-slideInRight">
                         <Image src={mainBannerRigthImage} alt="Banner Image" className="max-w-full h-auto z-50" />
                     </div>
                 </div>
@@ -151,6 +155,7 @@ export function MainBanner() {
         </div>
     );
 }
+
 
 
 //With ANIMATION

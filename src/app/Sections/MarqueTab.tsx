@@ -2,9 +2,9 @@ import React from "react";
 import FastMarquee from "./FastMarquee";
 export default function MarqueTab() {
     return (
-        <div id="awards" className="flex flex-col items-center justify-center bg-white min-h-screen text-gray-800">
+        <div id="awards" className="flex flex-col items-center justify-center bg-white text-gray-800 pt-12 xl:pt-24">
             {/* Section: Translating Technology */}
-            <section className="text-center py-16 px-6">
+            <section className="text-center py-0 px-6">
                 <h1 className="text-4xl font-bold mb-6">
                     Translating technology <br /> into a positive impact
                 </h1>
@@ -42,41 +42,6 @@ export default function MarqueTab() {
                     <p className="text-gray-600">Active clients across the globe</p>
                 </div>
             </section>
-
-
-            {/* <section className="w-full overflow-hidden py-2 bg-gray-50">
-                <div
-                    className="relative overflow-hidden py-8 whitespace-nowrap"
-                >
-                    <div
-                        className="inline-flex px-12"
-                        style={{ animation: "15s marquee infinite linear" }}
-                    >
-                        <img src={images.a} alt="AWS" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.b} alt="Salesforce" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.c} alt="Cloudera" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.d} alt="Sprinklr" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.e} alt="Informatica" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.f} alt="AWS" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.g} alt="Salesforce" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.h} alt="Cloudera" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                    </div>
-                    <div
-                        className="inline-flex px-12"
-                        style={{ animation: "15s marquee infinite linear" }}
-                    >
-                        <img src={images.a} alt="AWS" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.b} alt="Salesforce" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.c} alt="Cloudera" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.d} alt="Sprinklr" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.e} alt="Informatica" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.f} alt="AWS" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.g} alt="Salesforce" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.h} alt="Cloudera" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                        <img src={images.i} alt="Sprinklr" className="h-12 sm:h-16 mx-6 px-6 sm:px-12" />
-                    </div>
-                </div>
-            </section> */}
 
             <FastMarquee />
 

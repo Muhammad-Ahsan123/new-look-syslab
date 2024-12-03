@@ -2,12 +2,13 @@
 import Image from 'next/image'
 import React from 'react'
 import sysLogo from '../../../public/logosyslab.svg'
+import styles from '../styles/footer.module.css'
 
 function Footer() {
     return (
         <footer className="p-1 min-h-fit relative py-10 bg-gray-700 text-[#efefef] sm:px-8 px-8">
             <div
-                className="bg-gray-600 opacity-70 container mx-auto px-6 py-10 z-10 max-w-7xl text-center sm:text-start footer-wrapper"
+                className={`bg-gray-600 opacity-70 container mx-auto px-6 py-10 z-10 max-w-7xl text-center sm:text-start ${styles.footerwrapper}`}
             >
 
                 {/* Footer Content */}

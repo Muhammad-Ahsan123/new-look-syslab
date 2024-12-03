@@ -1,31 +1,53 @@
 //Without ANIMATION
 
+import { useState, useEffect, useRef } from "react";
 import analytic from '../../../public/analytic.png'
 import shield from '../../../public/shield.png'
 import analyzedata from '../../../public/analyzedata.png'
 import Image from 'next/image';
+
 export default function Services() {
+    const [inView, setInView] = useState(false); // State to track if the component is in view
+    const ref = useRef(null); // Reference to the component
+
+    useEffect(() => {
+        // Intersection Observer to detect when the component enters the viewport
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setInView(true); // Set inView to true when component is in the viewport
+            }
+        }, { threshold: 0.4 }); // Trigger when 90% of the component is in view
+
+        if (ref.current) {
+            observer.observe(ref.current); // Observe the element
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current); // Cleanup observer when component unmounts
+            }
+        };
+    }, []);
+
     return (
-        <div id='services' className="h-auto md:h-[40rem] flex justify-center flex-col items-center py-12 bg-[#232428] md:px-12">
-            <span className="px-10 inline-block -rotate-3 rounded-full py-2 border ml-2 sm:text-5xl text-3xl font-bold"
-            >
-                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-600 font-bold" >
+        <div id='services' ref={ref} className="h-auto md:h-[40rem] flex justify-center flex-col items-center py-12 bg-[#232428] md:px-12">
+            <span className={`px-10 inline-block -rotate-3 rounded-full py-2 border ml-2 sm:text-5xl text-3xl font-bold ${inView ? "animate-serviceSlideFromTop" : "opacity-0"}`}>
+                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-600 font-bold">
                     All Services
                 </span>
             </span>
-            {/* </h2> */}
-            <h1 className="text-gray-400 sm:text-2xl text-xl font-bold mt-2 font-sans">
+
+            <h1 className={`text-gray-400 sm:text-2xl text-xl font-bold mt-2 font-sans ${inView ? "animate-serviceSlideFromLeft" : "opacity-0"}`}>
                 See our all service
             </h1>
-            <p className="text-gray-300 text-center mt-4 max-w-2xl md:px-0 px-12 font-semibold">
-                We are self-service data analytics software that lets you create
-                visually appearing data visualizations and insightful dashboards in
-                minutes.
+
+            <p className={`text-gray-300 text-center mt-4 max-w-2xl md:px-0 px-12 font-semibold ${inView ? "animate-serviceSlideFromBottom" : "opacity-0"}`}>
+                We are self-service data analytics software that lets you create visually appearing data visualizations and insightful dashboards in minutes.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-5xl md:px-0 px-12">
+            <div className={`grid md:grid-cols-3 gap-6 mt-12 max-w-5xl md:px-0 px-12 ${inView ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
                 {/* Analyze Your Data */}
-                <div className="bg-white rounded-lg shadow-sm p-6 hover:scale-105 hover:transition-all hover:shadow-lg hover:cursor-pointer duration-75 border md:border-none">
+                <div className={`bg-white rounded-lg shadow-sm p-6 hover:scale-105 hover:transition-all hover:shadow-lg hover:cursor-pointer duration-75 border md:border-none ${inView ? "animate-serviceWaveEffect" : ""}`}>
                     <div className="flex justify-center">
                         <div className="w-12 h-12 bg-yellow-200 rounded-full flex items-center justify-center">
                             <Image
@@ -39,13 +61,12 @@ export default function Services() {
                         Analyze Your Data
                     </h3>
                     <p className="text-gray-600 text-center mt-2">
-                        Create reports with an easy-to-use drag-and-drop designer and
-                        analyze your data set.
+                        Create reports with an easy-to-use drag-and-drop designer and analyze your data set.
                     </p>
                 </div>
 
                 {/* Collaborate Securely */}
-                <div className="bg-white rounded-lg shadow-sm p-6 hover:scale-105 hover:transition-all hover:shadow-lg hover:cursor-pointer duration-75 ">
+                <div className={`bg-white rounded-lg shadow-sm p-6 hover:scale-105 hover:transition-all hover:shadow-lg hover:cursor-pointer duration-75 ${inView ? "animate-serviceWaveEffect" : ""}`}>
                     <div className="flex justify-center">
                         <div className="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center">
                             <Image
@@ -59,13 +80,12 @@ export default function Services() {
                         Collaborate Securely
                     </h3>
                     <p className="text-gray-600 text-center mt-2">
-                        Share/publish your reports with your colleagues and collaborate
-                        securely with more than 25 users.
+                        Share/publish your reports with your colleagues and collaborate securely with more than 25 users.
                     </p>
                 </div>
 
                 {/* Embedded Analytics */}
-                <div className="bg-white rounded-lg shadow-sm p-6 hover:scale-105 hover:transition-all hover:shadow-lg hover:cursor-pointer duration-75 ">
+                <div className={`bg-white rounded-lg shadow-sm p-6 hover:scale-105 hover:transition-all hover:shadow-lg hover:cursor-pointer duration-75 ${inView ? "animate-serviceWaveEffect" : ""}`}>
                     <div className="flex justify-center">
                         <div className="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center">
                             <Image
@@ -79,14 +99,14 @@ export default function Services() {
                         Embedded Analytics
                     </h3>
                     <p className="text-gray-600 text-center mt-2">
-                        Get a powerful analytics tool in your own brand name and enhance
-                        the predictive behaviors mapping.
+                        Get a powerful analytics tool in your own brand name and enhance the predictive behaviors mapping.
                     </p>
                 </div>
             </div>
         </div>
     );
 }
+
 
 //With ANIMATION
 
